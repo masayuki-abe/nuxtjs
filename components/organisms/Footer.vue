@@ -1,10 +1,8 @@
 <template>
 <footer>
 <dl>
-<dt><SiteName /></dt>
-<dd><nav class="fnavi">
-<Navi />
-</nav></dd>
+<SiteName htmlTag="dt" />
+<dd><Navi Role="Fnavi" /></dd>
 </dl> 
 </footer>
 </template>

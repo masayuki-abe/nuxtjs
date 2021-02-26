@@ -1,10 +1,8 @@
 <template>
 <header id="header" class="py-3"><div class="container d-flex justify-content-between align-items-center bg-light p-4">
-<SiteName Htag="1" />
+<SiteName htmlTag="h1" />
 <BtnMenu />
-<nav class="gnavi">
-<Navi />
-</nav>
+<Navi Role="Gnavi" />
 </div></header><!--/header-->
 </template>
 
