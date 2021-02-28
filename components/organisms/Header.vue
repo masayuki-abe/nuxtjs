@@ -3,7 +3,7 @@
 <SiteName htmlTag="h1" />
 <BtnMenu />
 <Navi Role="Gnavi" />
-</div></header><!--/header-->
+</div> </header><!--/header-->
 </template>
 
 <script>
