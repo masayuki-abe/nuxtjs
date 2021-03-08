@@ -1,8 +1,8 @@
 <template>
 <aside class="btn-menu col-1" @click='btnActive=!btnActive' :class='{active:btnActive}'>
-  <span></span>
-  <span></span>
-  <span></span>
+<span></span>
+<span></span>
+<span></span>
 </aside>
 </template>
 
@@ -10,7 +10,7 @@
 export default {
   data(){
     return{
-      btnActive: false
+      btnActive: false,
     }
   }
 }

@@ -1,21 +1,40 @@
 <template>
 <div>
-<Header />
+<HtmlHeader />
+<HeroImage
+  pageTitle="practise"
+/>
 <div id="wrap">
 <Nuxt />
 </div><!--/wrap-->
-<Footer />
+<HtmlFooter />
 </div>
 </template>
 
 <script>
-import Header from '@/components/organisms/Header.vue'
-import Footer from '@/components/organisms/Footer.vue'
+import HtmlHeader from '@/components/organisms/HtmlHeader.vue'
+import HeroImage from '@/components/organisms/HeroImage.vue'
+import HtmlFooter from '@/components/organisms/HtmlFooter.vue'
 
 export default {
   components: {
-    Header,
-    Footer
-  }
+    HtmlHeader,
+    HeroImage,
+    HtmlFooter
+  },
+  data(){
+    return{
+      //pageName : this.$route.name
+    }
+  },
+  mounted(){
+    //console.log(this.pageName)
+  },
 }
 </script>
+
+<style lang="scss">
+body{
+  position: relative;
+}
+</style>
