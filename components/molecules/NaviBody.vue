@@ -36,7 +36,13 @@ nav{
     left: 0;
     top: 100%;
     width: 100%;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(255,255,255,.8);
+    ul{
+      list-style: none;
+      li{
+        a{color: #333;}
+      }
+    }
   }
 }
 

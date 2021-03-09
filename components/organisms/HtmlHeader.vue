@@ -1,5 +1,5 @@
 <template>
-<header id="header" style="margin-bottom: 200px;">
+<header id="header">
   <div class="inner">
     <SiteName htmlTag="h1" />
     <aside
@@ -61,16 +61,32 @@ export default {
 </script>
 
 <style lang="scss">
-#header{position: relative;
+#header{
+  position: relative;
+  padding: 10px 0;
+  .inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
   h1 {
-    margin-bottom: 0;
+    width: 90%;
+    margin: 0;
   }
   .btn-menu {
+    position: relative;
+    width: 10%;
     span {
+      position: absolute;
+      left: 0;
+      top: 50%;
       display: inline-block;
       width: 100%;
       height: 2px;
       background-color: #333;
+      &:nth-child(1){margin-top: -10px;}
+      &:nth-child(3){margin-top: 10px;}
     }
   }
   .spNavi-enter-active,
