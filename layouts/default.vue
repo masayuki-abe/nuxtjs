@@ -1,9 +1,7 @@
 <template>
 <div>
 <HtmlHeader />
-<HeroImage
-  pageTitle="practise"
-/>
+<HeroImage />
 <div id="wrap">
 <Nuxt />
 </div><!--/wrap-->
