@@ -1,7 +1,7 @@
 <template>
 <footer>
 <dl>
-<SiteName htmlTag="dt" />
+<SiteName htmlTag="flogo" />
 <dd><NaviBody role="Fnavi" /></dd>
 </dl> 
 <BtnSclTop />
