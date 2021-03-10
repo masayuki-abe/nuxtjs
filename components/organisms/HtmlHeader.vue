@@ -1,7 +1,7 @@
 <template>
 <header id="header">
   <div class="inner">
-    <SiteName htmlTag="h1" />
+    <SiteName htmlTag="hlogo" />
     <aside
       v-if="isMobile"
       class="btn-menu"
