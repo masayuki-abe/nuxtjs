@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 nav{
   &.gnavi{
     position: absolute;
@@ -45,5 +45,11 @@ nav{
     }
   }
 }
-
+@include lap() {
+nav {
+  &.gnavi{
+    position: static;
+  }
+}
+}
 </style>
