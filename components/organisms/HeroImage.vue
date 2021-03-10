@@ -4,14 +4,18 @@
   id="visual"
   class="index"
 >
-<h1>{{this.$route.name}}</h1>
+  <swiper :options="swiperOption">
+    <swiper-slide>{{this.$route.name}} 1</swiper-slide>
+    <swiper-slide>{{this.$route.name}} 2</swiper-slide>
+    <swiper-slide>{{this.$route.name}} 3</swiper-slide>
+  </swiper>
 </section>
 <section 
   v-else
   id="visual"
   class="lower"
 >
-<h1>{{this.$route.name}}</h1>
+  <h1>{{this.$route.name}}</h1>
 </section>
 </template>
 
@@ -25,6 +29,19 @@ export default {
   },
   data(){
     return{
+      swiperOption: {
+        speed: 1000,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
+        slidePerView: 1,
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+      }
     }
   }
 }
@@ -44,6 +61,9 @@ export default {
     height: 100px;
     background-color: #ccc;
     color: #333;
+  }
+  .swiper-container{
+    width: 100%;
   }
 }
 </style>
