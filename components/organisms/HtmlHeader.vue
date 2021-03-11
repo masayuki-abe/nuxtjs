@@ -69,10 +69,13 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    padding: per(20, $tab);
   }
   h1 {
     width: 90%;
     margin: 0;
+    @include fontSet(48,48,0,$tab);
+    font-weight: 400;
   }
   .btn-menu {
     position: relative;
@@ -83,10 +86,18 @@ export default {
       top: 50%;
       display: inline-block;
       width: 100%;
-      height: 2px;
+      height: 3px;
       background-color: #333;
+      transition: margin .4s ease,opacity .4s ease,transform .4s ease;
       &:nth-child(1){margin-top: -10px;}
       &:nth-child(3){margin-top: 10px;}
+    }
+    &.active{
+      span{
+        &:nth-child(1){margin: 0; transform: rotate(45deg);}
+        &:nth-child(2){opacity: 0;}
+        &:nth-child(3){margin: 0; transform: rotate(-45deg);}
+      }
     }
   }
   .spNavi-enter-active,

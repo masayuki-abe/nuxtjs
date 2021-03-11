@@ -1,22 +1,42 @@
-$tab: 768px;
-$lap: 1024px;
-$pc: 1200px;
+//Base Width
+$tab: 768;
+$lap: 1024;
+$pc: 1200;
 
+
+
+//Media Query
 @mixin tab {
-  @media screen and (min-width: $tab) {
+  @media screen and (min-width: $tab + px) {
     @content;
   }
 }
-
 @mixin lap {
-  @media screen and (min-width: $lap) {
+  @media screen and (min-width: $lap + px) {
     @content;
   }
 }
-
 @mixin pc {
-  @media screen and (min-width: $pc) {
+  @media screen and (min-width: $pc + px) {
     @content;
   }
 }
 
+
+
+//Calc Width
+@function per($child, $parent){
+  @return ($child / $parent) * 100%;
+}
+
+
+
+//Font Size
+@mixin fontSet($fs, $lh, $ls, $device){
+  font-size: ($fs / $device) * 100vw;
+  line-height: ($lh / $fs);
+  letter-spacing: $ls / 1000 + em;
+  @include tab(){
+    font-size: ($fs / 10) + rem;
+  }
+}
