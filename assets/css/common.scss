@@ -10,27 +10,27 @@ body{
   font-size: 1rem;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 400;
-  #wrap{
-    width: per($tab - 40, $tab);
-    margin: 0 auto;
-  }
+  // #wrap{
+  //   width: per($tab - 40, $tab);
+  //   margin: 0 auto;
+  // }
 }
 .serif{
   font-family: 'Cormorant Garamond', serif;
 }
 @include lap(){
 body{
-  #wrap{
-    width: per(960, $lap);
-    max-width: 960px;
-  }
+  // #wrap{
+  //   width: per(960, $lap);
+  //   max-width: 960px;
+  // }
 }
 }
 @include pc(){
 body{
-  #wrap{
-    width: per($pc - 40, $pc);
-    max-width: 1180px;
-  }
+  // #wrap{
+  //   width: per($pc - 40, $pc);
+  //   max-width: 1180px;
+  // }
 }
 }
