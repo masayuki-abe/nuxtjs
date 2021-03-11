@@ -1,6 +1,7 @@
 <template>
 <h1
   v-if="htmlTag == 'hlogo'"
+  class="serif"
 >
   <nuxt-link to='/'>
     <span>{{Name}}</span>
@@ -43,6 +44,7 @@
 </dt>
 <dt
   v-else-if="htmlTag == 'flogo'"
+  class="serif"
 >
   <nuxt-link to='/'>
     <span>{{Name}}</span>
@@ -63,7 +65,7 @@ export default{
   },
   data(){
     return{
-      Name:'Simple Web Site.',
+      Name:'cafe NORTH FOXES',
     }
   },
 }

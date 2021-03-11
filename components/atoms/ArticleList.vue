@@ -132,5 +132,15 @@ export default {
 .aco-body {
   transition: height .4s ease-in-out;
   overflow: hidden;
+  p{
+    @include fontSet(32, 48, 300, $tab);
+  }
+}
+@include tab(){
+.aco-body{
+  p{
+    @include fontSet(16, 24, 500, $tab);
+  }
+}
 }
 </style>

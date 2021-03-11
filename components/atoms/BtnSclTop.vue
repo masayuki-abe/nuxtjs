@@ -29,7 +29,7 @@ export default {
       })
     },
     btnFadeIn() {
-      const top =100
+      const top =50
       this.scroll = window.scrollY
       if(top <= this.scroll){
         this.btnSclTopActive = true
