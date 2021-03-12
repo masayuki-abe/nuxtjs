@@ -1,7 +1,7 @@
 <template>
 <header
   id="header"
-  ref="Header"
+  :class="{opacity : headerBg}"
 >
   <div class="inner">
     <SiteName htmlTag="hlogo" />
@@ -39,24 +39,34 @@ export default {
   data(){
     return{
       btnActive: false,
-      wWidth: 1025
+      wWidth: 1025,
+      headerBg: false,
+      scroll: 0
     }
   },
   mounted(){
+    //リサイズしたとき含めてウィンドウの横幅を取得
     this.wWidth = window.innerWidth
     this.$nextTick(() => {
       window.addEventListener('resize', () => {
         this.wWidth = window.innerWidth
       })
-    });
-    const domHeader = this.$refs.Header;
-    const domHeaderRect = domHeader.getBoundingClientRect();
-    const domHeaderHeight = domHeaderRect.height;
-    this.$emit('getHeaderHeight', domHeaderHeight)
+    })
+    window.addEventListener('scroll', this.headerBgColor)
   },
   methods:{
+    //ハンバーガーメニューの処理
     closeNavi:function () {
       this.btnActive = false
+    },
+    headerBgColor() {
+      const top =50
+      this.scroll = window.scrollY
+      if(top <= this.scroll){
+        this.headerBg = true
+      }else{
+        this.headerBg = false
+      }
     },
   },
   computed:{
@@ -69,11 +79,16 @@ export default {
 
 <style lang="scss">
 #header{
-  position: fixed;
+  position: sticky;
   left: 0;
   top: 0;
   width: 100%;
+  background-color: #fff;
   padding: 10px 0;
+  transition: background .6s ease;
+  &.opacity{
+    background-color: rgba(255,255,255,.7);
+  }
   .inner{
     display: flex;
     flex-wrap: wrap;
@@ -123,5 +138,10 @@ export default {
   .spNavi-leave-from {
     opacity: 1;
   }
+}
+@include tab() {
+#header{
+  position: relative;
+}
 }
 </style>
