@@ -3,6 +3,7 @@
 
 
 
+//Base
 html{
   font-size: 62.5%;
 }
@@ -16,22 +17,30 @@ body{
     padding-bottom: 500px;
   }
 }
-.serif{
-  font-family: 'Cormorant Garamond', serif;
+
+
+
+//Layout
+.common-box{
+  width: per($tab - 40, $tab);
+  margin: 0 auto;
 }
 @include lap(){
-body{
-  #wrap{
-    width: per(960, $lap);
-    max-width: 960px;
-  }
+.common-box{
+  width: per(960, $lap);
+  max-width: 960px;
 }
 }
 @include pc(){
-body{
-  #wrap{
-    width: per($pc - 40, $pc);
-    max-width: 1180px;
-  }
+.common-box{
+  width: per($pc - 40, $pc);
+  max-width: 1180px;
 }
+}
+
+
+
+//Fonts
+.serif{
+  font-family: 'Cormorant Garamond', serif;
 }

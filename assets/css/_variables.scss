@@ -24,7 +24,7 @@ $pc: 1200;
 
 
 
-//Calc Width
+//Calc Percentage
 @function per($child, $parent){
   @return ($child / $parent) * 100%;
 }

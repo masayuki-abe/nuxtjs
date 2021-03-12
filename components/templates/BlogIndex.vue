@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ArticleList from '@/components/atoms/ArticleList.vue'
+import ArticleList from '@/components/molecules/ArticleList.vue'
 
 export default{
   components: {
