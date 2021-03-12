@@ -1,5 +1,8 @@
 <template>
-<header id="header">
+<header
+  id="header"
+  ref="Header"
+>
   <div class="inner">
     <SiteName htmlTag="hlogo" />
     <aside
@@ -45,7 +48,11 @@ export default {
       window.addEventListener('resize', () => {
         this.wWidth = window.innerWidth
       })
-    })
+    });
+    const domHeader = this.$refs.Header;
+    const domHeaderRect = domHeader.getBoundingClientRect();
+    const domHeaderHeight = domHeaderRect.height;
+    this.$emit('getHeaderHeight', domHeaderHeight)
   },
   methods:{
     closeNavi:function () {
@@ -62,7 +69,10 @@ export default {
 
 <style lang="scss">
 #header{
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   padding: 10px 0;
   .inner{
     display: flex;
