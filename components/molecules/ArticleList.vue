@@ -1,5 +1,5 @@
 <template>
-<section class="article-list">
+<article class="article-list">
 <ul class="list-unstyled">
 <li
   v-for="(article, index) in limitCount"
@@ -39,7 +39,7 @@
   </transition>
 </li>
 </ul>
-</section><!--/articlelist-->
+</article><!--/articlelist-->
 </template>
 
 <script>
