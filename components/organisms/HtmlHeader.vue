@@ -82,12 +82,13 @@ export default {
   position: sticky;
   left: 0;
   top: 0;
+  z-index: 10000;
   width: 100%;
-  background-color: #fff;
+  background-color: $darkBrown;
   padding: 10px 0;
   transition: background .6s ease;
   &.opacity{
-    background-color: rgba(255,255,255,.7);
+    background-color: rgba($darkBrown,.9);
   }
   .inner{
     display: flex;
@@ -98,7 +99,7 @@ export default {
   }
   h1 {
     width: 90%;
-    margin: 0;
+    color: $milk;
     @include fontSet(48,48,0,$tab);
     font-weight: 400;
   }
@@ -112,7 +113,7 @@ export default {
       display: inline-block;
       width: 100%;
       height: 3px;
-      background-color: #333;
+      background-color: $milk;
       transition: margin .4s ease,opacity .4s ease,transform .4s ease;
       &:nth-child(1){margin-top: -10px;}
       &:nth-child(3){margin-top: 10px;}
@@ -141,7 +142,38 @@ export default {
 }
 @include tab() {
 #header{
-  position: relative;
+  padding: 0;
+  .inner{
+    width: $tab - 40px;
+    margin: 0 auto;
+    padding: per(20, $tab) 0;
+  }
+  h1 {
+    @include fontSet(32,32,0,$tab);
+  }
+  .btn-menu {
+    width: 6%;
+    span {
+      &:nth-child(1){margin-top: -12px;}
+      &:nth-child(3){margin-top: 12px;}
+    }
+  }
+}
+}
+@include pc{
+#header{
+  padding: 0;
+  .inner{
+    @include dflex(sb,c);
+    width: (1180 / $pc) * 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+  h1 {
+    width: auto;
+    @include fontSet(32,32,0,$pc);
+  }
 }
 }
 </style>

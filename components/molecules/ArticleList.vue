@@ -61,7 +61,7 @@ export default {
       const data = [
         {
           date: '2021/03/08',
-          title: 'test article',
+          title: 'test articlelelele',
           intro: 'ここにイントロダクションが入ります。<br>これはイントロダクションです。',
           contents: [
             'これはテストです。<br>これはテストです。これはテストです。',
