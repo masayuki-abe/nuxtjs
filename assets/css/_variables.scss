@@ -24,10 +24,46 @@ $pc: 1200;
 
 
 
+//display
+@mixin dis($dis:none){
+  display: $dis;
+}
+@mixin dflex($jc:fs,$ai:fs){
+  display: flex;
+  flex-wrap: wrap;
+  @if $jc == sb{justify-content: space-between;}
+  @else if $jc == fs{justify-content: flex-start;}
+  @else if $jc == fe{justify-content: flex-end;}
+  @else if $jc == c{justify-content: center;}
+  @else if $jc == sa{justify-content: space-around;}
+  @else{justify-content: $jc;}
+  @if $ai == c{align-items: center;}
+  @else if $ai == st{align-items: stretch;}
+  @else if $ai == fs{align-items: flex-start;}
+  @else if $ai == fe{align-items: flex-end;}
+  @else{align-items: $ai;}
+  @content;
+}
+
+
+
 //Calc Percentage
 @function per($child, $parent){
   @return ($child / $parent) * 100%;
 }
+
+
+
+//BaseColor
+$white: #fff;
+$dark: #333;
+//ThemeColor
+$smokeBrown: #876B52;
+$darkBrown: #3B2E24;
+$brown: #54351A;
+$lightBrown: #87552A;
+$beige: #D4A781;
+$milk: #FAF7EE;
 
 
 
@@ -39,4 +75,11 @@ $pc: 1200;
   @include tab(){
     font-size: ($fs / 10) + rem;
   }
+}
+
+
+
+//Text Align
+@mixin ta($ta-pos){
+  text-align: $ta-pos;
 }
