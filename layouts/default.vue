@@ -4,7 +4,6 @@
   @getHeaderHeight = "headerHeight"
 />
 <div
-  :style="{paddingTop: hHeight + 'px'}"
   id="wrap"
 >
 <HeroImage />
@@ -40,9 +39,6 @@ export default {
     }
   },
   methods: {
-    headerHeight(domHeaderHeight){
-      this.hHeight = domHeaderHeight
-    }
   }
 }
 </script>
