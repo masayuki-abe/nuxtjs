@@ -40,19 +40,27 @@ export default {
     return{
       btnActive: false,
       wWidth: 1025,
+      headerHeight: 0,
       headerBg: false,
       scroll: 0
     }
   },
   mounted(){
+    //リサイズしたとき含めてヘッダの高さを取得
+    let htmlHeader = document.getElementById('header');
+    let hHeight = htmlHeader.clientHeight;
+    this.headerHeight = hHeight
     //リサイズしたとき含めてウィンドウの横幅を取得
     this.wWidth = window.innerWidth
     this.$nextTick(() => {
       window.addEventListener('resize', () => {
         this.wWidth = window.innerWidth
+        this.headerHeight = hHeight
       })
     })
     window.addEventListener('scroll', this.headerBgColor)
+    console.log(this.headerHeight + 'px')
+    this.$emit('getHeaderHeight',this.headerHeight)
   },
   methods:{
     //ハンバーガーメニューの処理
@@ -160,7 +168,7 @@ export default {
   }
 }
 }
-@include pc{
+@include lap{
 #header{
   padding: 0;
   .inner{

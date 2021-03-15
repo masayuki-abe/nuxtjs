@@ -3,12 +3,15 @@
   v-if="this.$route.name === 'index'"
   id="visual"
   :class=pageName
+  :style="{paddingTop: hHeightPadding}"
 >
-  <swiper :options="swiperOption">
-    <swiper-slide><img src="~/assets/img/index/visual01.jpg" alt=""></swiper-slide>
-    <swiper-slide><img src="~/assets/img/index/visual02.jpg" alt=""></swiper-slide>
-    <swiper-slide><img src="~/assets/img/index/visual03.jpg" alt=""></swiper-slide>
-  </swiper>
+  <client-only>
+    <swiper :options="swiperOption">
+      <swiper-slide><img src="~/assets/img/index/visual01.jpg" alt="ビジュアル1"></swiper-slide>
+      <swiper-slide><img src="~/assets/img/index/visual02.jpg" alt="ビジュアル2"></swiper-slide>
+      <swiper-slide><img src="~/assets/img/index/visual03.jpg" alt="ビジュアル3"></swiper-slide>
+    </swiper>
+  </client-only>
   <h2 class="serif">I want to dance again.</h2>
 </section>
 <section
@@ -24,14 +27,14 @@
 <script>
 export default {
   props: {
-    title: {
+    hHeightPadding: {
       type: String,
-      default: ''
     }
   },
   data(){
     return{
       pageName: this.$route.name,
+      visualPadding: this.hHeightPadding,
       swiperOption: {
         speed: 3000,
         autoplay: {
@@ -44,8 +47,12 @@ export default {
         fadeEffect: {
           crossFade: true
         },
-      }
+      },
     }
+  },
+  mounted(){
+    console.log(this.visualPadding + 'tetetete')
+
   }
 }
 </script>

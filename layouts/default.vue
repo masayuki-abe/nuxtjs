@@ -1,15 +1,15 @@
 <template>
 <div>
-<HtmlHeader
-  @getHeaderHeight = "headerHeight"
-/>
-<div
-  id="wrap"
->
-<HeroImage />
-<Nuxt />
-</div><!--/wrap-->
-<HtmlFooter />
+  <HtmlHeader
+    @getHeaderHeight = "headerHeight"
+  />
+  <HeroImage
+    :hHeightPadding="hHeight"
+  />
+  <div id="wrap">
+    <Nuxt />
+  </div><!--/wrap-->
+  <HtmlFooter />
 </div>
 </template>
 
@@ -39,6 +39,10 @@ export default {
     }
   },
   methods: {
+    headerHeight(headerHeight){
+      this.hHeight = headerHeight + 'px'
+      console.log(this.hHeight + 'pxxxx')
+    }
   }
 }
 </script>
