@@ -3,6 +3,7 @@
   v-if="this.$route.name === 'index'"
   id="visual"
   :class=pageName
+  :style="{paddingTop: hHeightPadding + 'px'}"
 >
   <client-only>
     <swiper :options="swiperOption">
@@ -26,6 +27,9 @@
 <script>
 export default {
   props: {
+    hHeightPadding: {
+      type: String
+    }
   },
   data(){
     return{
@@ -42,8 +46,12 @@ export default {
         fadeEffect: {
           crossFade: true
         },
-      }
+      },
     }
+  },
+  mounted(){
+    console.log(this.hHeightPadding)
+
   }
 }
 </script>

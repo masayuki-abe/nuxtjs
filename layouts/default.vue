@@ -1,13 +1,15 @@
 <template>
 <div>
-<HtmlHeader />
-<div
-  id="wrap"
->
-<HeroImage />
-<Nuxt />
-</div><!--/wrap-->
-<HtmlFooter />
+  <HtmlHeader
+    @getHeaderHeight = "headerHeight"
+  />
+  <HeroImage
+    :hHeightPadding="hHeight"
+  />
+  <div id="wrap">
+    <Nuxt />
+  </div><!--/wrap-->
+  <HtmlFooter />
 </div>
 </template>
 
@@ -24,7 +26,7 @@ export default {
   },
   data(){
     return{
-      //hHeight: ''
+      hHeight: ''
       //pageName : this.$route.name
     }
   },
@@ -37,6 +39,10 @@ export default {
     }
   },
   methods: {
+    headerHeight(headerHeight){
+      this.hHeight = headerHeight
+      console.log(this.hHeight + 'pxxxx')
+    }
   }
 }
 </script>
