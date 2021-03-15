@@ -3,7 +3,7 @@
   v-if="this.$route.name === 'index'"
   id="visual"
   :class=pageName
-  :style="{paddingTop: hHeightPadding + 'px'}"
+  :style="{paddingTop: hHeightPadding}"
 >
   <client-only>
     <swiper :options="swiperOption">
@@ -28,12 +28,13 @@
 export default {
   props: {
     hHeightPadding: {
-      type: String
+      type: String,
     }
   },
   data(){
     return{
       pageName: this.$route.name,
+      visualPadding: this.hHeightPadding,
       swiperOption: {
         speed: 3000,
         autoplay: {
@@ -50,7 +51,7 @@ export default {
     }
   },
   mounted(){
-    console.log(this.hHeightPadding)
+    console.log(this.visualPadding + 'tetetete')
 
   }
 }

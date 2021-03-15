@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     headerHeight(headerHeight){
-      this.hHeight = headerHeight
+      this.hHeight = headerHeight + 'px'
       console.log(this.hHeight + 'pxxxx')
     }
   }

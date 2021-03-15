@@ -168,7 +168,7 @@ export default {
   }
 }
 }
-@include pc{
+@include lap{
 #header{
   padding: 0;
   .inner{
