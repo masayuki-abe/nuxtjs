@@ -1,8 +1,6 @@
 <template>
 <div>
-<HtmlHeader
-  @getHeaderHeight = "headerHeight"
-/>
+<HtmlHeader />
 <div
   id="wrap"
 >
@@ -26,7 +24,7 @@ export default {
   },
   data(){
     return{
-      hHeight: ''
+      //hHeight: ''
       //pageName : this.$route.name
     }
   },
