@@ -2,8 +2,9 @@
 <section
   v-if="this.$route.name === 'index'"
   id="visual"
+  ref="visualBox"
   :class=pageName
-  :style="{paddingTop: hHeightPadding}"
+  :style="{marginTop: hHeightPadding}"
 >
   <client-only>
     <swiper :options="swiperOption">
@@ -12,7 +13,9 @@
       <swiper-slide><img src="~/assets/img/index/visual03.jpg" alt="ビジュアル3"></swiper-slide>
     </swiper>
   </client-only>
-  <h2 class="serif">I want to dance again.</h2>
+  <div class="visual-text">
+    <h2 id="vt" class="vt2 serif">I want to dance again.</h2>
+  </div>
 </section>
 <section
   v-else
@@ -20,7 +23,7 @@
   class="lower"
   :class=pageName
 >
-  <h2>{{this.$route.name}}</h2>
+  <h2 class="visual-text serif" style="display:block;">{{this.$route.name}}</h2>
 </section>
 </template>
 
@@ -48,38 +51,58 @@ export default {
           crossFade: true
         },
       },
+      visualHeight: 0
     }
   },
   mounted(){
-    console.log(this.visualPadding + 'tetetete')
-
-  }
+    //リサイズしたとき含めてヘッダの高さを取得
+    let htmlVisual = document.getElementById('visual');
+    let vHeight = htmlVisual.clientHeight;
+    this.visualHeight = vHeight
+    this.$nextTick(() => {
+      window.addEventListener('resize', () => {
+        this.visualHeight = vHeight
+      })
+    })
+    this.$emit('getVisualHeight',this.visualHeight)
+  },
 }
 </script>
 
 <style lang="scss">
 #visual{
+  overflow: hidden;
   &.index{
     position: relative;
+    @include dflex(c,st);
     .swiper-container{
       width: 100%;
+      height: auto;
+      .swiper-wrapper{
+        height: auto;
+      }
+      .swiper-slide{
+        overflow: hidden;
+        height: auto;
+      }
       img{
         width: 100%;
         height: auto;
       }
     }
-    h2{
-      @include dflex(c,c);
+    .visual-text{
+      @include dflex(c,st);
       position: absolute;
       left: 0;
       top: 0;
       z-index: 100;
       width: 100%;
-      height: 100%;
-      color: $milk;
-      @include fontSet(42,48,300,$tab);
-      font-weight: 400;
-
+      h2{
+        @include dflex(c,c);
+        color: $milk;
+        @include fontSet(42,48,300,$tab);
+        font-weight: 400;
+      }
     }
   }
 }

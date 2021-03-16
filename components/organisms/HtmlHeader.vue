@@ -59,7 +59,7 @@ export default {
       })
     })
     window.addEventListener('scroll', this.headerBgColor)
-    console.log(this.headerHeight + 'px')
+    //console.log(this.headerHeight + 'px')
     this.$emit('getHeaderHeight',this.headerHeight)
   },
   methods:{

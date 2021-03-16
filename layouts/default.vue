@@ -6,7 +6,11 @@
   <HeroImage
     :hHeightPadding="hHeight"
   />
-  <div id="wrap">
+  <div
+    @getVisualHeight = "visualHeight"
+    id="wrap"
+    :style="{paddingTop: vHeight + 'px'}"
+  >
     <Nuxt />
   </div><!--/wrap-->
   <HtmlFooter />
@@ -26,7 +30,8 @@ export default {
   },
   data(){
     return{
-      hHeight: ''
+      hHeight: '',
+      vHeight: ''
       //pageName : this.$route.name
     }
   },
@@ -42,7 +47,11 @@ export default {
     headerHeight(headerHeight){
       this.hHeight = headerHeight + 'px'
       console.log(this.hHeight + 'pxxxx')
-    }
+    },
+    visualHeight(visualHeight){
+      this.vHeight = visualHeight + 'px'
+      console.log(this.vHeight + 'pxyyy')
+    },
   }
 }
 </script>
