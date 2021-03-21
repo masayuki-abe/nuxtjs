@@ -4,7 +4,7 @@
   id="visual"
   ref="visualBox"
   :class=pageName
-  :style="{marginTop: hHeightPadding}"
+  :style="{top: hHeightPadding}"
 >
   <client-only>
     <swiper :options="swiperOption">
@@ -53,28 +53,17 @@ export default {
       },
       visualHeight: 0
     }
-  },
-  mounted(){
-    //リサイズしたとき含めてヘッダの高さを取得
-    let htmlVisual = document.getElementById('visual');
-    let vHeight = htmlVisual.clientHeight;
-    this.visualHeight = vHeight
-    this.$nextTick(() => {
-      window.addEventListener('resize', () => {
-        this.visualHeight = vHeight
-      })
-    })
-    this.$emit('getVisualHeight',this.visualHeight)
-  },
+  }
 }
 </script>
 
 <style lang="scss">
 #visual{
-  overflow: hidden;
+  position: sticky;
+  left: 0;
+  top: 0;
   &.index{
-    position: relative;
-    @include dflex(c,st);
+    @include dflex(c,c);
     .swiper-container{
       width: 100%;
       height: auto;
@@ -91,12 +80,13 @@ export default {
       }
     }
     .visual-text{
-      @include dflex(c,st);
+      @include dflex(c,c);
       position: absolute;
       left: 0;
       top: 0;
       z-index: 100;
       width: 100%;
+      height: 100%;
       h2{
         @include dflex(c,c);
         color: $milk;
