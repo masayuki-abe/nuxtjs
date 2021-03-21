@@ -4,12 +4,11 @@
     @getHeaderHeight = "headerHeight"
   />
   <HeroImage
+    @getVisualHeight = "visualHeight"
     :hHeightPadding="hHeight"
   />
   <div
-    @getVisualHeight = "visualHeight"
     id="wrap"
-    :style="{paddingTop: vHeight + 'px'}"
   >
     <Nuxt />
   </div><!--/wrap-->
@@ -50,7 +49,7 @@ export default {
     },
     visualHeight(visualHeight){
       this.vHeight = visualHeight + 'px'
-      console.log(this.vHeight + 'pxyyy')
+      console.log(this.vHeight + 'vheight')
     },
   }
 }
@@ -59,5 +58,10 @@ export default {
 <style lang="scss">
 body{
   position: relative;
+  #wrap{
+    position: relative;
+    z-index: 100;
+    background-color: $milk;
+  }
 }
 </style>
