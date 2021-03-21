@@ -22,3 +22,18 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.tit-section{
+  padding-bottom: .2em;
+  color: $lightBrown;
+  @include fontSet(48,56,100,$tab)
+}
+@include tab() {
+.tit-section{
+  padding-bottom: .2em;
+  color: $lightBrown;
+  @include fontSet(32,48,100,$tab)
+}
+}
+</style>
