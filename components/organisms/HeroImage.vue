@@ -1,10 +1,9 @@
 <template>
 <section
-  v-if="this.$route.name === 'index'"
-  id="visual"
-  ref="visualBox"
-  :class=pageName
-  :style="{top: hHeightPadding}"
+  v-if = "this.$route.name === 'index'"
+  id = "visual"
+  :class = this.$route.name
+  :style = "{top: hHeightPadding}"
 >
   <client-only>
     <swiper :options="swiperOption">
@@ -21,7 +20,7 @@
   v-else
   id="visual"
   class="lower"
-  :class=pageName
+  :class = this.$route.name
 >
   <h2 class="visual-text serif" style="display:block;">{{this.$route.name}}</h2>
 </section>
@@ -36,7 +35,6 @@ export default {
   },
   data(){
     return{
-      pageName: this.$route.name,
       visualPadding: this.hHeightPadding,
       swiperOption: {
         speed: 3000,
