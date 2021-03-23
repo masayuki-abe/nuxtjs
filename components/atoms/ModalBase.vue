@@ -3,8 +3,16 @@
   name="modal"
   appear
 >
-  <div class="modal-wrap" @click="closeModal">
+  <div
+    class="modal-wrap"
+    @click="closeModal"
+  >
     <div class="modal-window">
+      <span
+        @click="closeModal"
+        class="btn-close"
+      >
+      </span>
       <div class="modal-content">
         <slot />
       </div>
@@ -23,25 +31,55 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .modal {
   .modal-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.7);
     .modal-window{
-      width: 70%;
-      height: 80%;
-      background-color: rgba(255,255,255,.9);
+      position: relative;
+      width: 90%;
+      height: 75%;
+      background-color: rgba($milk,.9);
+      .btn-close{
+        @include dis(inline-block);
+        position: absolute;
+        right: 0;
+        top: -25px;
+        width: 20px;
+        height: 20px;
+        &:before,&:after{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 3px;
+          height: 100%;
+          background-color: $milk;
+        }
+        &:before{
+          transform: rotate(45deg);
+        }
+        &:after{
+          transform: rotate(-45deg);
+        }
+      }
       .modal-content{
         padding: 20px;
+        @include fontSet(32,48,100,$tab);
+        *{
+          padding-bottom: 1em;
+          &:last-child{
+            padding-bottom: 0;
+          }
+        }
       }
     }
   }
