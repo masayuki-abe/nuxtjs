@@ -9,8 +9,9 @@
   :to='list.path'
   active-class="current"
   @click.native="btnMenuSwitch();"
+  exact
 >
-{{list.name}}
+  {{list.name}}
 </nuxt-link>
 </li>
 </ul>

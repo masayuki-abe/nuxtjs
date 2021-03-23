@@ -1,0 +1,45 @@
+@import './_reset';
+@import './_variables';
+
+
+
+//Base
+html{
+  font-size: 62.5%;
+}
+body{
+  color: $darkBrown;
+  font-size: 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  #wrap{
+    padding-bottom: 500px;
+  }
+}
+
+
+
+//Layout
+.common-box{
+  width: per($tab - 40, $tab);
+  margin: 0 auto;
+}
+@include lap(){
+.common-box{
+  width: per(960, $lap);
+  max-width: 960px;
+}
+}
+@include pc(){
+.common-box{
+  width: per($pc - 40, $pc);
+  max-width: 1180px;
+}
+}
+
+
+
+//Fonts
+.serif{
+  font-family: 'Cormorant Garamond', serif;
+}
