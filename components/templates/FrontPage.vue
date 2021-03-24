@@ -17,21 +17,9 @@
       titleText="Pickup!"
       class="tit-section"
     />
-    <dl>
-      <dt @click="openModal">ピックアップのタイトル</dt>
-      <dd class="modal">
-        <Modal v-if="modalFlag" @close-modal="closeModal">
-          <p>ここにモーダルの内容が入ります。</p>
-          <p>ここにモーダルの内容が入ります。ここに内容が入ります。</p>
-          <p>ここにモーダルの内容が入ります。</p>
-          <p>ここにモーダルの内容が入ります。ここに内容が入ります。</p>
-          <p>ここにモーダルの内容が入ります。</p>
-          <p>ここにモーダルの内容が入ります。ここに内容が入ります。</p>
-          <p>ここにモーダルの内容が入ります。</p>
-          <p>ここにモーダルの内容が入ります。ここに内容が入ります。</p>
-        </Modal>
-      </dd>
-    </dl>
+          <FrontPickup
+            @getPickupTitle = "intoPickupTitle"
+          />
   </section><!--/box02-->
 
   <section id="box03" class="common-box">
@@ -52,30 +40,31 @@
 
 <script>
 import ArticleList from '@/components/molecules/ArticleList.vue'
-import Modal from '@/components/atoms/ModalBase.vue'
+import FrontPickup from '@/components/molecules/FrontPickup.vue'
 import BtnRounded from '@/components/atoms/BtnRounded.vue'
 import TitSection from '@/components/atoms/TitSection.vue'
 
 export default{
   components: {
     ArticleList,
-    Modal,
+    FrontPickup,
     BtnRounded,
     TitSection
   },
 
   data(){
     return{
-      modalFlag: false,
+      pickupTit: ''
     }
   },
   methods: {
-    openModal() {
-      this.modalFlag = true
-    },
-    closeModal() {
-      this.modalFlag = false
-    },
+    intoPickupTitle(pickupTitle){
+      this.PickupTit　= pickupTitle
+      console.log(this.PickupTit + 'のさき')
+    }
+  },
+  mounted() {
+    this.intoPickupTitle()
   }
 }
 </script>
