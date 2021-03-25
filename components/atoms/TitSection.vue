@@ -25,9 +25,9 @@ export default {
 
 <style lang="scss" scoped>
 .tit-section{
-  padding-bottom: .2em;
+  padding-bottom: .5em;
   color: $lightBrown;
-  @include fontSet(48,56,100,$tab)
+  @include fontSet(48,64,100,$tab)
 }
 @include tab() {
 .tit-section{

@@ -1,13 +1,15 @@
 <template>
 <div class="home">
-  <section id="box01" class="common-box">
-    <TitSection
-      titleTag="h3"
-      titleClass="serif"
-      titleText="Introduction"
-      class="tit-section"
-    />
-    <p>イントロダクション</p>
+  <section id="box01">
+    <div class="common-box">
+      <TitSection
+        titleTag="h3"
+        titleClass="serif"
+        titleText='Welcome to a "cafe NORTH FOXES".'
+        class="tit-section"
+      />
+      <p class="txt">イントロダクション</p>
+    </div>
   </section><!--/box01-->
 
   <section id="box02" class="common-box">
@@ -17,9 +19,9 @@
       titleText="Pickup!"
       class="tit-section"
     />
-          <FrontPickup
-            @getPickupTitle = "intoPickupTitle"
-          />
+    <FrontPickup
+      @getPickupTitle = "intoPickupTitle"
+    />
   </section><!--/box02-->
 
   <section id="box03" class="common-box">
@@ -68,3 +70,10 @@ export default{
   }
 }
 </script>
+
+<style lang="scss" scoped>
+#box01{
+  background-color: $smokeBrown;
+  color: $milk;
+}
+</style>

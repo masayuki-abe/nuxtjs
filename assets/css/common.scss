@@ -12,9 +12,6 @@ body{
   font-size: 1rem;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 400;
-  #wrap{
-    padding-bottom: 500px;
-  }
 }
 
 
@@ -23,6 +20,7 @@ body{
 .common-box{
   width: per($tab - 40, $tab);
   margin: 0 auto;
+  padding-bottom: (60 / $tab) * 100%;
 }
 @include lap(){
 .common-box{
@@ -42,4 +40,12 @@ body{
 //Fonts
 .serif{
   font-family: 'Cormorant Garamond', serif;
+}
+.txt{
+  @include fontSet(32,48,100,$tab);
+}
+@include lap(){
+  .txt{
+    @include fontSet(16,32,100,$tab);
+  }
 }
