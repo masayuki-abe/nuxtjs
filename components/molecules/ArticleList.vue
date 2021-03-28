@@ -6,7 +6,8 @@
   :key='article.date'
 >
   <dl>
-    <dt>{{article.date}}</dt>
+    <dt><img :src="'http://books.google.com/books/content?id=' + article.id + '&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'">
+</dt>
     <dd>{{article.title}}</dd>
   </dl>
   <p
@@ -30,6 +31,8 @@
       v-show="isOpen[index]"
       class="aco-body"
     >
+
+
       <p
         v-for="articleText in article.contents"
         :key='articleText.id'
@@ -43,10 +46,13 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data(){
     return{
       isOpen: [],
+      posts: [],
     }
   },
   computed: {
@@ -60,8 +66,9 @@ export default {
     articles() {
       const data = [
         {
+          id: 'vpCBDwAAQBAJ',
           date: '2021/03/08',
-          title: 'test articlelelele',
+          title: '『殺人者の顔』<span>ヘニング・マンケル</span>',
           intro: 'ここにイントロダクションが入ります。<br>これはイントロダクションです。',
           contents: [
             'これはテストです。<br>これはテストです。これはテストです。',
@@ -72,8 +79,9 @@ export default {
           date: '2021/03/07',
           title: 'test article2',
           intro: 'イントロダクション',
+          isbn: '4150412677',
           contents: [
-            'これはテスト2です。これはテストです。これはテストです。'
+            'これはテストXです。これはテストです。これはテストです。'
           ]
         },
         {
@@ -100,7 +108,7 @@ export default {
         }
       ]
       return data
-    },
+    }
   },
   created() {
     //アコーディオンの数だけ開閉フラグを作成
@@ -124,6 +132,12 @@ export default {
     leave(el) {
       el.style.height = '0'
     }
+  },
+  mounted() {
+    axios.get('https://www.googleapis.com/books/v1/users/108445538797584670491/bookshelves/1001/volumes')
+    // axios.get('https://www.googleapis.com/books/v1/volumes?q=isbn:4488209025')
+    //axios.get('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => this.posts = response.data.items)
   }
 }
 </script>
