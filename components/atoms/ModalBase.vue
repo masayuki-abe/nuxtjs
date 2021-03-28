@@ -72,6 +72,9 @@ export default {
         }
       }
       .modal-content{
+        position: relative;
+        height: 100%;
+        overflow-y: scroll;
         padding: 20px;
         @include fontSet(32,48,100,$tab);
         *{
