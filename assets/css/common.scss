@@ -18,7 +18,7 @@ body{
 
 //Layout
 .common-box{
-  width: per($tab - 40, $tab);
+  width: per($tab - 60, $tab);
   margin: 0 auto;
   padding-bottom: (60 / $tab) * 100%;
 }
