@@ -5,32 +5,35 @@
       <TitSection
         titleTag="h3"
         titleClass="serif"
-        titleText='Welcome to a "cafe NORTH FOXES".'
+        titleText='since 1999'
         class="tit-section"
       />
       <p class="txt">イントロダクション</p>
     </div>
   </section><!--/box01-->
 
-  <section id="box02" class="common-box">
-    <TitSection
-      titleTag="h3"
-      titleClass="serif"
-      titleText="Pickup!"
-      class="tit-section"
-    />
-    <FrontPickup
-      @getPickupTitle = "intoPickupTitle"
-    />
+  <section id="box02">
+    <div class="common-box">
+      <TitSection
+        titleTag="h3"
+        titleClass="serif"
+        titleText="Blog"
+        class="tit-section"
+      />
+      <FrontPickup
+        @getPickupTitle = "intoPickupTitle"
+      />
+    </div>
   </section><!--/box02-->
 
-  <section id="box03" class="common-box">
-    <TitSection
-      titleTag="h3"
-      titleClass="serif"
-      titleText="Blog"
-      class="tit-section"
-    />
+  <section id="box03">
+      <TitSection
+        titleTag="h3"
+        titleClass="serif"
+        titleText="Reading log"
+        class="tit-section"
+      />
+
     <ArticleList />
     <BtnRounded
       linkText="もっと見るる"
