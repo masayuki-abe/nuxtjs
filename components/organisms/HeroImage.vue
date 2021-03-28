@@ -65,6 +65,8 @@ export default {
     .swiper-container{
       width: 100%;
       height: auto;
+      font-size: 0;
+      line-height: 0;
       .swiper-wrapper{
         height: auto;
       }
