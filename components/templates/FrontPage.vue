@@ -5,10 +5,15 @@
       <TitSection
         titleTag="h3"
         titleClass="serif"
-        titleText='since 1999'
+        titleText='Since 1999.'
         class="tit-section"
       />
-      <p class="txt">イントロダクション</p>
+      <p class="txt">その時そのときでやりたいことが異なって。<br>
+      その度にこのウェブサイトも形を変えているわけですが、名前だけはずっといまのまま。</p>
+    <BtnRounded
+      linkText="About"
+      linkPath="/about/"
+    />
     </div>
   </section><!--/box01-->
 
@@ -78,5 +83,17 @@ export default{
 #box01{
   background-color: $smokeBrown;
   color: $milk;
+  h3{
+    padding: 1em 0 6em;
+    color: $milk;
+    font-weight: 400;
+  }
+  .txt{
+    padding-bottom: 3em;
+    @include fontSet(14,32,300,$tab);
+  }
+  .btn-rounded{
+    @include fontSet(14,14,0,$tab);
+  }
 }
 </style>
