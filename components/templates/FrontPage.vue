@@ -100,25 +100,20 @@ export default{
 
 
 #box02{
+  background-color: $white;
   border-bottom: 1px $darkBrown solid;
   .common-box{
-    padding-top: per(60,$tab);
+    padding: per(60,$tab) 0 per(30,$tab);
     h3{
       @include ta(center);
     }
-    .front-pickup{
-      dt{
-        position: relative;
-        padding-bottom: 3em;
-        @include ta(center);
-        &:after{
-          content: "＋";
-          position: absolute;
-          right: 0;
-          bottom: 0;
-        }
-      }
-    }
   }
+}
+@include pc() {
+#box02{
+  .common-box{
+    padding: per(60,$pc) 0 per(30,$pc);
+  }
+}
 }
 </style>
