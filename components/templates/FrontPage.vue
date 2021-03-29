@@ -22,7 +22,7 @@
       <TitSection
         titleTag="h3"
         titleClass="serif"
-        titleText="Blog"
+        titleText="Message"
         class="tit-section"
       />
       <FrontPickup
@@ -94,6 +94,31 @@ export default{
   }
   .btn-rounded{
     @include fontSet(14,14,0,$tab);
+  }
+}
+
+
+
+#box02{
+  border-bottom: 1px $darkBrown solid;
+  .common-box{
+    padding-top: per(60,$tab);
+    h3{
+      @include ta(center);
+    }
+    .front-pickup{
+      dt{
+        position: relative;
+        padding-bottom: 3em;
+        @include ta(center);
+        &:after{
+          content: "＋";
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
   }
 }
 </style>
