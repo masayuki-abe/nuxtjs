@@ -40,6 +40,7 @@ export default {
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 20000;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.7);
@@ -104,5 +105,30 @@ export default {
     opacity: 0;
     transform: translateY(-20px);
   }
+}
+@include tab() {
+.modal {
+  .modal-wrap {
+    @include dflex(c,fe);
+    padding-bottom: 5%;
+    .modal-window{
+      height: 70%;
+    }
+  }
+}
+}
+@include lap() {
+.modal {
+  .modal-wrap {
+    @include dflex(c,c);
+    padding-bottom: 0;
+    .modal-window{
+      height: 75%;
+      .modal-content{
+        @include fontSetPC(16,32,100);
+      }
+    }
+  }
+}
 }
 </style>
