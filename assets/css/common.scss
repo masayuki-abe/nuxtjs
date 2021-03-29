@@ -46,6 +46,6 @@ body{
 }
 @include lap(){
   .txt{
-    @include fontSet(16,32,100,$tab);
+    @include fontSetPC(16,32,100);
   }
 }
