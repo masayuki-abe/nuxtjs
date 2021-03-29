@@ -6,18 +6,15 @@
   :key='article.date'
 >
   <dl>
-    <dt>{{article.date}}</dt>
-    <dd>{{article.title}}</dd>
+    <dt><img :src="'http://books.google.com/books/content?id=' + article.id + '&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'" :alt="article.title"></dt>
+    <dd>{{article.title}}<span>{{article.author}}</span></dd>
   </dl>
-  <p
-    v-html="article.intro"
-  />
   <p
     class="btn-readmore"
     :class="{'is-active': isOpen[index]}"
     @click="handleToggle(index)"
   >
-    続きを読む
+    ＋
   </p>
   <transition
     name="acoBody"
@@ -60,44 +57,59 @@ export default {
     articles() {
       const data = [
         {
-          date: '2021/03/08',
-          title: 'test articlelelele',
-          intro: 'ここにイントロダクションが入ります。<br>これはイントロダクションです。',
+          id: 'Prj-h8CftAMC',
+          title: '『ライ麦畑でつかまえて』',
+          author: 'J.D. サリンジャー',
           contents: [
             'これはテストです。<br>これはテストです。これはテストです。',
             'これはテスト2です。これはテスト2です。これはテスト2です。'
           ]
         },
         {
-          date: '2021/03/07',
-          title: 'test article2',
-          intro: 'イントロダクション',
+          id: '2SdzBQAAQBAJ',
+          title: '『星を継ぐもの』',
+          author: 'ジェイムズ・P・ホーガン',
           contents: [
-            'これはテスト2です。これはテストです。これはテストです。'
+            'これはテストです。<br>これはテストです。これはテストです。',
+            'これはテスト2です。これはテスト2です。これはテスト2です。'
           ]
         },
         {
-          date: '2021/03/06',
-          title: 'test article3',
+          id: 'oRqctQEACAAJ',
+          title: '『コールド・コールド・グラウンド』',
+          author: 'エイドリアン・マッキンティ',
           contents: [
-            'これはテスト3です。これはテストです。これはテストです。'
+            'これはテストです。<br>これはテストです。これはテストです。',
+            'これはテスト2です。これはテスト2です。これはテスト2です。'
           ]
         },
         {
-          date: '2021/03/05',
-          title: 'test article4',
+          id: 'Jo_ZAwAAQBAJ',
+          title: '『戦士志願』',
+          author: 'ロイス・マクマスター・ビジョルド',
           contents: [
-            'これはテスト4です。これはテストです。これはテストです。'
-
+            'これはテストです。<br>これはテストです。これはテストです。',
+            'これはテスト2です。これはテスト2です。これはテスト2です。'
           ]
         },
         {
-          date: '2021/03/04',
-          title: 'test article5',
+          id: '2CiRMQEACAAJ',
+          title: '『暗殺者グレイマン』',
+          author: 'マーク・グリーニー',
           contents: [
-            'これはテスト5です。これはテストです。これはテストです。'
+            'これはテストです。<br>これはテストです。これはテストです。',
+            'これはテスト2です。これはテスト2です。これはテスト2です。'
           ]
-        }
+        },
+        {
+          id: 'vpCBDwAAQBAJ',
+          title: '『殺人者の顔』',
+          author: 'ヘニング・マンケル',
+          contents: [
+            'これはテストです。<br>これはテストです。これはテストです。',
+            'これはテスト2です。これはテスト2です。これはテスト2です。'
+          ]
+        },
       ]
       return data
     },

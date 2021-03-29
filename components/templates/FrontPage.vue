@@ -32,18 +32,21 @@
   </section><!--/box02-->
 
   <section id="box03">
+    <div class="common-box none">
       <TitSection
         titleTag="h3"
         titleClass="serif"
         titleText="Reading log"
         class="tit-section"
       />
-
+    </div>
     <ArticleList />
-    <BtnRounded
-      linkText="もっと見るる"
-      linkPath="/blog/"
-    />
+    <div class="common-box">
+      <BtnRounded
+        linkText="More"
+        linkPath="/blog/"
+      />
+    </div>
   </section><!--/box03-->
 </div>
 </template>
