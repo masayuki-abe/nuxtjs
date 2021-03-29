@@ -93,10 +93,25 @@ export default{
     @include fontSet(14,32,300,$tab);
   }
   .btn-rounded{
-    @include fontSet(14,14,0,$tab);
+    @include fontSet(14,14,300,$tab);
   }
 }
-
+@include pc() {
+#box01{
+  h3{
+    padding: 1em 0 6em;
+    color: $milk;
+    font-weight: 400;
+  }
+  .txt{
+    padding-bottom: 3em;
+    @include fontSet(14,32,300,$pc);
+  }
+  .btn-rounded{
+    @include fontSet(14,14,300,$pc);
+  }
+}
+}
 
 
 #box02{

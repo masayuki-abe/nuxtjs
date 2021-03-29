@@ -76,6 +76,11 @@ $milk: #FAF7EE;
     font-size: ($fs / 10) + rem;
   }
 }
+@mixin fontSetPC($fs, $lh, $ls){
+  font-size: $fs * .1rem;
+  line-height: ($lh / $fs);
+  letter-spacing: $ls / 1000 + em;
+}
 
 
 
