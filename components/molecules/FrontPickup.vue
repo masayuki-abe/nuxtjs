@@ -79,6 +79,17 @@ export default {
 <style lang="scss" scoped>
 .front-pickup{
   dl{
+    dt{
+      position: relative;
+      padding-bottom: 3em;
+      @include ta(center);
+      &:after{
+        content: "＋";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
     dd{
       h4{
         color: $lightBrown;
@@ -87,6 +98,36 @@ export default {
       }
     }
   }
+}
+@include pc(){
+.front-pickup{
+  dl{
+    dt{
+      &:after{
+        opacity: 0;
+        content: "＋";
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        transform: translateX(50%);
+        transition: opacity .4s ease;
+      }
+      &:hover{
+        cursor: pointer;
+        &:after{
+          opacity: 1;
+        }
+      }
+    }
+    dd{
+      h4{
+        color: $lightBrown;
+        @include fontSet(48,52,100,$tab);
+        font-weight: 400;
+      }
+    }
+  }
+}
 }
 
 </style>
