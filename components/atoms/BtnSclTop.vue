@@ -5,7 +5,7 @@
     @click="sclTop"
     class="btn-scltop"
   >
-    ページトップへ
+    <span></span>
   </aside>
 </transition>
 </template>
@@ -55,5 +55,20 @@ export default {
   &.fadein-leave-to{
     opacity :0;
   }
+  span{
+    @include dis(inline-block);
+    width: 1em;
+    height: 1em;
+    border-top: 2px $darkBrown solid;
+    border-left: 2px $darkBrown solid;
+    @include fontSet(32,32,0,$tab);
+    transform: rotate(45deg);
+  }
+}
+@include tab() {
+.btn-scltop{
+  bottom: 20px;
+  right: 20px;
+}
 }
 </style>

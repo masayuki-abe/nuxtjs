@@ -55,6 +55,19 @@ nav{
       }
     }
   }
+  &.fnavi{
+    ul{
+      list-style: none;
+      li{
+        padding-bottom: 1em;
+        @include fontSet(32,32,100,$tab);
+        @include ta(center);
+        &:last-child{
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
 }
 @include tab() {
 nav{
@@ -120,6 +133,13 @@ nav{
             }
           }
         }
+      }
+    }
+  }
+  &.fnavi{
+    ul{
+      li{
+        @include fontSetPC(16,24,100);
       }
     }
   }
