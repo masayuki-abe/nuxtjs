@@ -3,15 +3,15 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'practise',
+    title: 'cafe NORTH FOXES',
     htmlAttrs: {
       lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'これは勉強用のページ' },
-      { hid: 'robots', name: 'robots', content: 'noindex,nofollow' },
+      { hid: 'description', name: 'description', content: '本が好き。言葉が好き。文字が好き。' },
+      { hid: 'robots', name: 'robots', content: 'index,follow' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
