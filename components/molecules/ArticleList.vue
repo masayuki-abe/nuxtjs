@@ -1,20 +1,20 @@
 <template>
-<article class="article-list">
-<ul class="list-unstyled">
+<div class="article-list">
+<ul>
 <li
   v-for="(article, index) in limitCount"
   :key='article.date'
 >
-  <dl>
+  <dl class="common-box">
     <dt><img :src="'http://books.google.com/books/content?id=' + article.id + '&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'" :alt="article.title"></dt>
-    <dd>{{article.title}}<span>{{article.author}}</span></dd>
+    <dd><span class="book-title">{{article.title}}</span><span class="book-author">{{article.author}}</span></dd>
   </dl>
   <p
-    class="btn-readmore"
+    class="btn-readmore common-box none"
     :class="{'is-active': isOpen[index]}"
     @click="handleToggle(index)"
   >
-    ＋
+    <span></span>
   </p>
   <transition
     name="acoBody"
@@ -25,7 +25,7 @@
   >
     <article
       v-show="isOpen[index]"
-      class="aco-body"
+      class="aco-body common-box"
     >
       <p
         v-for="articleText in article.contents"
@@ -36,7 +36,7 @@
   </transition>
 </li>
 </ul>
-</article><!--/articlelist-->
+</div><!--/articlelist-->
 </template>
 
 <script>
@@ -57,7 +57,7 @@ export default {
     articles() {
       const data = [
         {
-          id: 'Prj-h8CftAMC',
+          id: 'Ky-zPAAACAAJ',
           title: '『ライ麦畑でつかまえて』',
           author: 'J.D. サリンジャー',
           contents: [
@@ -141,17 +141,149 @@ export default {
 </script>
 
 <style lang="scss">
+.article-list{
+  ul{
+    list-style: none;
+    li{
+      margin-bottom: per(60,$tab);
+      padding-bottom: per(60,$tab);
+      border-bottom: 1px $darkBrown solid;
+      &:last-child{
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      dl{
+        padding-bottom: per(120,$tab);
+        dt{
+          width: 70%;
+          margin: 0 auto per(40,$tab);
+          img{
+            width: 100%;
+          }
+        }
+        dd{
+          .book-title{
+            @include dis(block); padding-bottom: 1em; @include fontSet(32,48,100,$tab); font-weight: 700; @include ta(center);
+          }
+          .book-author{
+            @include dis(block); @include fontSet(28,28,100,$tab); font-style: italic; @include ta(right);
+            &:before{
+              content: "－"; margin-right: .5em;
+            }
+          }
+        }
+      }
+      .btn-readmore{
+        @include dflex(fe,c);
+        span{
+          @include dis(inline-block);
+          width: 1em;
+          height: 1em;
+          border-right: 2px $darkBrown solid;
+          border-bottom: 2px $darkBrown solid;
+          @include fontSet(32,32,0,$tab);
+          transform: rotate(-45deg);
+          transition: transform .4s ease;
+        }
+        &.is-active{
+          span{
+            transform: rotate(405deg);
+          }
+        }
+      }
+    }
+  }
+}
 .aco-body {
   transition: height .4s ease-in-out;
   overflow: hidden;
+  padding-top: per(60,$tab);
   p{
     @include fontSet(32, 48, 300, $tab);
   }
 }
 @include tab(){
-.aco-body{
+.article-list{
+  ul{
+    li{
+      margin-bottom: per(60,$tab);
+      padding-bottom: per(60,$tab);
+      dl{
+        padding-bottom: per(120,$tab);
+        dt{
+          width: 45%;
+          margin: 0 auto per(30,$tab);
+        }
+        dd{
+          .book-title{
+            padding-bottom: .5em; @include fontSet(32,48,100,$tab); font-weight: 700; @include ta(center);
+          }
+        }
+      }
+    }
+  }
+}
+}
+@include lap() {
+.article-list{
+  ul{
+    @include dflex(c,st);
+    li{width: 33%;
+      margin: 0 3% 30px 0;
+      padding: per(20,$lap);
+      border: 1px $darkBrown solid;
+      &:last-child{
+        margin: 0 3% 30px 0;
+        padding: per(20,$lap);
+        border-bottom: 1px $darkBrown solid;
+      }
+      dl{
+        width: 100%;
+        padding-bottom: per(20,$lap);
+        dt{
+          width: 70%;
+          margin: 0 auto per(20,$lap);
+        }
+        dd{
+          .book-title{
+            padding-bottom: .5em;
+            @include fontSetPC(16,24,100);
+          }
+          .book-author{
+            @include fontSetPC(14,14,100);
+            @include ta(center);
+            &:before{
+              content: none;
+            }
+          }
+        }
+      }
+      .btn-readmore{
+        @include dflex(fe,c);
+        span{
+          @include dis(inline-block);
+          width: 1em;
+          height: 1em;
+          @include fontSetPC(16,16,0);
+          transform: rotate(-45deg) translateX(.5em);
+          transition: transform .4s ease;
+        }
+        &.is-active{
+          span{
+            transform: rotate(405deg);
+          }
+        }
+      }
+    }
+  }
+}
+.aco-body {
+  transition: height .4s ease-in-out;
+  overflow: hidden;
+  padding-top: per(40,$lap);
   p{
-    @include fontSet(16, 24, 500, $tab);
+    @include fontSetPC(16,24,300);
   }
 }
 }

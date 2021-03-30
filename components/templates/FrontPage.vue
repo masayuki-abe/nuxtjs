@@ -134,4 +134,26 @@ export default{
   }
 }
 }
+
+
+
+#box03{
+  .common-box{
+    padding: per(60,$tab) 0;
+    h3{@include ta(center);}
+    .btn-rounded{
+      @include fontSet(32,32,300,$tab);
+    }
+  }
+}
+@include lap() {
+#box03{
+  .common-box{
+    padding: per(60,$lap) 0;
+    .btn-rounded{
+      @include fontSetPC(20,20,300);
+    }
+  }
+}
+}
 </style>
