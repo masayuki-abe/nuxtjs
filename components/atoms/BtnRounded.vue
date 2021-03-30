@@ -35,7 +35,7 @@ export default {
       top: 0;
       width: 100%;
       height: 50%;
-      background-color: $brown;
+      background-color: $beige;
       transform: translateX(.5em) translateY(.8em);
     }
     span{
@@ -56,7 +56,7 @@ export default {
       top: 0;
       width: 100%;
       height: 50%;
-      background-color: $brown;
+      background-color: $beige;
       transform: translateX(.5em) translateY(.8em);
       transition: opacity .6s ease, transform .8s ease;
     }

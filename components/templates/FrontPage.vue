@@ -32,18 +32,21 @@
   </section><!--/box02-->
 
   <section id="box03">
+    <div class="common-box none">
       <TitSection
         titleTag="h3"
         titleClass="serif"
         titleText="Reading log"
         class="tit-section"
       />
-
+    </div>
     <ArticleList />
-    <BtnRounded
-      linkText="もっと見るる"
-      linkPath="/blog/"
-    />
+    <div class="common-box">
+      <BtnRounded
+        linkText="More"
+        linkPath="/blog/"
+      />
+    </div>
   </section><!--/box03-->
 </div>
 </template>
@@ -128,6 +131,28 @@ export default{
 #box02{
   .common-box{
     padding: per(60,$pc) 0 per(30,$pc);
+  }
+}
+}
+
+
+
+#box03{
+  .common-box{
+    padding: per(60,$tab) 0;
+    h3{@include ta(center);}
+    .btn-rounded{
+      @include fontSet(32,32,300,$tab);
+    }
+  }
+}
+@include lap() {
+#box03{
+  .common-box{
+    padding: per(60,$lap) 0;
+    .btn-rounded{
+      @include fontSetPC(20,20,300);
+    }
   }
 }
 }

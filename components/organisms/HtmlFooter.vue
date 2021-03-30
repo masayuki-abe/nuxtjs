@@ -3,7 +3,7 @@
 <dl>
 <SiteName htmlTag="flogo" />
 <dd><NaviBody role="Fnavi" /></dd>
-</dl> 
+</dl>
 <BtnSclTop />
 </footer>
 </template>
@@ -21,3 +21,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+#footer{
+  background-color: $beige;
+}
+</style>
