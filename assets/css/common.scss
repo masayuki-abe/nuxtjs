@@ -21,7 +21,9 @@ body{
   width: per($tab - 60, $tab);
   margin: 0 auto;
   padding-bottom: (60 / $tab) * 100%;
-  &.none{padding-bottom: 0;}
+  &.none{
+    padding-bottom: 0;
+  }
 }
 @include lap(){
 .common-box{
