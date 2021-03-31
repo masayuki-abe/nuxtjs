@@ -1,0 +1,54 @@
+@import './_reset';
+@import './_variables';
+
+
+
+//Base
+html{
+  font-size: 62.5%;
+}
+body{
+  color: $darkBrown;
+  font-size: 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+}
+
+
+
+//Layout
+.common-box{
+  width: per($tab - 60, $tab);
+  margin: 0 auto;
+  padding-bottom: (60 / $tab) * 100%;
+  &.none{
+    padding-bottom: 0;
+  }
+}
+@include lap(){
+.common-box{
+  width: per(960, $lap);
+  max-width: 960px;
+}
+}
+@include pc(){
+.common-box{
+  width: per($pc - 40, $pc);
+  max-width: 1180px;
+}
+}
+
+
+
+//Fonts
+.serif{
+  font-family: 'Cormorant Garamond', serif;
+}
+.txt{
+  @include fontSet(32,48,100,$tab);
+}
+@include lap(){
+  .txt{
+    @include fontSetPC(16,32,100);
+  }
+}
