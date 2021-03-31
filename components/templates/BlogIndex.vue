@@ -13,7 +13,7 @@ export default{
   },
   head() {
     return {
-      title: 'Blogページ',
+      title: 'Blog｜cafe NORTHFOXES',
     }
   },
   data(){
