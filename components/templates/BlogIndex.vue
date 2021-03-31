@@ -1,7 +1,5 @@
 <template>
 <section id="box01">
-<p v-if="this.$route.name === 'blog'">blog index<br>{{pageTitle}}</p>
-<p v-else-if="this.$route.name === 'blog-category'">blog category<br>{{pageTitle}}</p>
 <ArticleList />
 </section><!--/box01-->
 </template>
@@ -25,3 +23,11 @@ export default{
   },
 }
 </script>
+
+<style lang="scss" scoped>
+#box01{
+  width: per($tab - 60, $tab);
+  margin: 0 auto;
+  padding: per(100,$tab) 0;
+}
+</style>
