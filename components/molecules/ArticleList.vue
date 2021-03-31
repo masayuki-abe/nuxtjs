@@ -287,4 +287,17 @@ export default {
   }
 }
 }
+@include pc() {
+.article-list{
+  ul{
+    @include dflex(sb,st);
+    li{width: 32%;
+      margin: 0 0 30px 0;
+      &:last-child{
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+}
+}
 </style>

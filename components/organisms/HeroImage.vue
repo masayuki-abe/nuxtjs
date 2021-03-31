@@ -95,6 +95,16 @@ export default {
       }
     }
   }
+  &.blog{
+    background: url(~/assets/img/blog/visual.jpg) no-repeat center center; background-size: cover;
+    .visual-text{
+      padding: 2em 0;
+      color: $milk;
+      @include fontSet(42,48,400,$tab);
+      font-weight: 400;
+      @include ta(center);
+    }
+  }
 }
 @include lap(){
 }
